@@ -1,0 +1,349 @@
+[
+    {
+        "name": "tax after discount with line item discount and tip",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                {
+                    "unitPrice": "15",
+                    "name": "Purchase",
+                    "quantity": "1",
+                    "taxName": "State",
+                    "taxRate": "0.1",
+                    "imageUrl": "https://www.paypalobjects.com/webstatic/i/sparta/logo/logo_paypal_106x29.png",
+                    "discountAmount": "5.00"
+                }
+            ],
+            "gratuityAmount": ".10",
+            "taxCalculatedAfterDiscount": true,
+            "merchantEmail": "sp-us-b1@paypal.com"
+        },
+        "total": "10.11"
+    },
+    {
+        "name": "tax before discount with line item discount",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                {
+                    "unitPrice": "15",
+                    "name": "Purchase",
+                    "quantity": "1",
+                    "taxName": "State",
+                    "taxRate": "0.1",
+                    "imageUrl": "https://www.paypalobjects.com/webstatic/i/sparta/logo/logo_paypal_106x29.png",
+                    "discountAmount": "5.00"
+                }
+            ],
+            "taxCalculatedAfterDiscount": false,
+            "merchantEmail": "sp-us-b1@paypal.com"
+        },
+        "total": "10.02"
+    },
+    {
+        "name": "tax exclusive, no discount, no tip",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                { "unitPrice": "10", "name": "Purchase", "quantity": "1", "taxName": "State", "taxRate": "10" }
+            ],
+            "merchantEmail": "sp-us-b1@paypal.com"
+        },
+        "total": "11"
+    },
+    {
+        "name": "tax inclusive, no discount, no tip",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                { "unitPrice": "10", "name": "Purchase", "quantity": "1", "taxName": "State", "taxRate": "10" }
+            ],
+            "merchantEmail": "sp-us-b1@paypal.com",
+            "taxInclusive": true
+        },
+        "total": "10"
+    },
+    {
+        "name": "tax exclusive, qty 2",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                { "unitPrice": "10", "name": "Purchase", "quantity": "2", "taxName": "State", "taxRate": "10" }
+            ],
+            "merchantEmail": "sp-us-b1@paypal.com",
+            "taxInclusive": false
+        },
+        "total": "22"
+    },
+    {
+        "name": "tax inclusive, qty 2",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                { "unitPrice": "10", "name": "Purchase", "quantity": "2", "taxName": "State", "taxRate": "10" }
+            ],
+            "merchantEmail": "sp-us-b1@paypal.com",
+            "taxInclusive": true
+        },
+        "total": "20"
+    },
+    {
+        "name": "tax exclusive, items with different rates",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                { "unitPrice": "10", "name": "Purchase", "quantity": "2", "taxName": "State", "taxRate": "10" },
+                { "unitPrice": "3", "name": "Purchase", "quantity": "1", "taxName": "State", "taxRate": "10" },
+                { "unitPrice": "0.75", "name": "Purchase", "quantity": "1", "taxName": "State2", "taxRate": "3.6" }
+            ],
+            "merchantEmail": "sp-us-b1@paypal.com",
+            "taxInclusive": false
+        },
+        "total": "26.08"
+    },
+    {
+        "name": "tax inclusive, items with different rates",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specifi  ed",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                { "unitPrice": "10", "name": "Purchase", "quantity": "2", "taxName": "State", "taxRate": "10" },
+                { "unitPrice": "3", "name": "Purchase", "quantity": "1", "taxName": "State", "taxRate": "10" },
+                { "unitPrice": "0.75", "name": "Purchase", "quantity": "1", "taxName": "State2", "taxRate": "3.6" }
+            ],
+            "merchantEmail": "sp-us-b1@paypal.com",
+            "taxInclusive": true
+        },
+        "total": "23.75"
+    },
+    {
+        "name": "tax exclusive, invoice discount and tip",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                { "unitPrice": "10", "name": "Purchase", "quantity": "1", "taxName": "State", "taxRate": "10" },
+                { "unitPrice": ".75", "name": "Purchase", "quantity": "1", "taxName": "State2", "taxRate": "3.6" }
+            ],
+            "gratuityAmount": ".11",
+            "discountAmount": "6",
+            "merchantEmail": "sp-us-b1@paypal.com",
+            "taxInclusive": false,
+            "taxCalculatedAfterDiscount": true
+        },
+        "total": "5.31"
+    },
+    {
+        "name": "tax inclusive, invoice discount and tip",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                { "unitPrice": "10", "name": "Purchase", "quantity": "1", "taxName": "State", "taxRate": "10" },
+                { "unitPrice": ".75", "name": "Purchase", "quantity": "1", "taxName": "State2", "taxRate": "3.6" }
+            ],
+            "gratuityAmount": ".11",
+            "discountAmount": "6",
+            "merchantEmail": "sp-us-b1@paypal.com",
+            "taxInclusive": true,
+            "taxCalculatedAfterDiscount": true
+        },
+        "total": "4.86"
+    },
+    {
+        "name": "multiple tax rates with the same name",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                {
+                    "unitPrice": "15",
+                    "name": "Purchase",
+                    "quantity": "1",
+                    "taxName": "State",
+                    "taxRate": "0.1",
+                    "imageUrl": "https://www.paypalobjects.com/webstatic/i/sparta/logo/logo_paypal_106x29.png",
+                    "discountAmount": "5.00"
+                },
+                {
+                    "unitPrice": "15",
+                    "name": "Purchase",
+                    "quantity": "1",
+                    "taxName": "State",
+                    "taxRate": "0.2",
+                    "imageUrl": "https://www.paypalobjects.com/webstatic/i/sparta/logo/logo_paypal_106x29.png",
+                    "discountAmount": "5.00"
+                }
+            ],
+            "gratuityAmount": ".10",
+            "taxCalculatedAfterDiscount": true,
+            "merchantEmail": "sp-us-b1@paypal.com"
+        },
+        "total": "20.13"
+    },
+    {
+        "name": "multiple items with the same tax rate",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                {
+                    "unitPrice": "15",
+                    "name": "Purchase",
+                    "quantity": "1",
+                    "taxName": "State",
+                    "taxRate": "0.1",
+                    "imageUrl": "https://www.paypalobjects.com/webstatic/i/sparta/logo/logo_paypal_106x29.png",
+                    "discountAmount": "5.00"
+                },
+                {
+                    "unitPrice": "15",
+                    "name": "Purchase",
+                    "quantity": "1",
+                    "taxName": "State",
+                    "taxRate": "0.2",
+                    "imageUrl": "https://www.paypalobjects.com/webstatic/i/sparta/logo/logo_paypal_106x29.png",
+                    "discountAmount": "5.00"
+                }
+            ],
+            "gratuityAmount": ".10",
+            "taxCalculatedAfterDiscount": true,
+            "merchantEmail": "sp-us-b1@paypal.com"
+        },
+        "total": "20.13"
+    },
+    {
+        "name": "simple multi-item that failed once because of a floating point bug",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                {
+                    "name":"Dollar (Tax)",
+                    "quantity":1,
+                    "unitPrice":1.00,
+                    "taxName": "Sales Tax",
+                    "taxRate": "8.749999850988388"
+                },
+                {
+                    "name":"Muffin",
+                    "quantity":1,
+                    "unitPrice":1.75,
+                    "taxName": "Sales Tax",
+                    "taxRate": "8.749999850988388"
+                }
+            ],
+            "merchantEmail": "sp-us-b1@paypal.com"
+        },
+        "total": "2.99"
+    },
+    {
+        "name": "fractional quantities and rounding up",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                {
+                    "name":"Five Cent Item",
+                    "quantity":0.5,
+                    "unitPrice":0.05
+                },
+                {
+                    "name":"Five Cent Other Item",
+                    "quantity":0.5,
+                    "unitPrice":0.05
+                }
+            ],
+            "merchantEmail": "sp-us-b1@paypal.com"
+        },
+        "total": "0.06"
+    },
+    {
+        "name": "fractional quantities and rounding down",
+        "invoice": {
+            "invoiceDate": "2013-04-18T20:25:46Z", "currencyCode": "USD", "paymentTerms": "DueOnReceipt",
+            "merchantInfo": {
+                "businessName": "Test Merchant",
+                "address": { "country": "US", "state": "MA", "line1": "Address Not Specified",
+                    "city": "Boston", "postalCode": "02110" }
+            },
+            "items": [
+                {
+                    "name":"Five Cent Item",
+                    "quantity":0.45,
+                    "unitPrice":0.05
+                },
+                {
+                    "name":"Five Cent Other Item",
+                    "quantity":0.45,
+                    "unitPrice":0.05
+                }
+            ],
+            "merchantEmail": "sp-us-b1@paypal.com"
+        },
+        "total": "0.04"
+    }
+]
