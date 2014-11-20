@@ -1,0 +1,30 @@
+{
+  "name": "paypal-invoice",
+  "main": "dist/paypal-invoice.js",
+  "version": "0.1.0",
+  "homepage": "https://github.com/djMax/node-paypal-invoice",
+  "authors": [
+    "Max Metral <ma@x.com>"
+  ],
+  "description": "Node.js libraries for PayPal Invoicing (calculations, JSON format, etc)",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "paypal",
+    "invoicing"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "bignumber.js": "^1.4.1"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
