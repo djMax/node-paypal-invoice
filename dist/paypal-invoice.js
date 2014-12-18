@@ -28,14 +28,17 @@ var BigNum = _dereq_('bignumber.js');
 
 var currencyProperties = {
     USD: {
+        symbol: '$',
         decimals: 2,
         round: BigNum.ROUND_HALF_UP
     },
     GBP: {
+        symbol: '£',
         decimals: 2,
         round: BigNum.ROUND_HALF_UP
     },
     AUD: {
+        symbol: '$',
         decimals: 2,
         round: BigNum.ROUND_HALF_UP
     }
