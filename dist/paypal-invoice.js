@@ -30,6 +30,14 @@ var currencyProperties = {
     USD: {
         decimals: 2,
         round: BigNum.ROUND_HALF_UP
+    },
+    GBP: {
+        decimals: 2,
+        round: BigNum.ROUND_HALF_UP
+    },
+    AUD: {
+        decimals: 2,
+        round: BigNum.ROUND_HALF_UP
     }
 };
 
@@ -44,7 +52,8 @@ module.exports = {
     Number: BigNum,
     newNumber: function (v) {
         return new BigNum(v);
-    }
+    },
+    properties: currencyProperties
 };
 
 
@@ -75,6 +84,7 @@ Invoice.STATUS = {
 };
 
 Invoice.Number = currency.newNumber;
+Invoice.Currencies = currency.properties;
 
 Invoice.Item = function (quantity, unitPrice, itemId, detailId) {
     if (!quantity) {
