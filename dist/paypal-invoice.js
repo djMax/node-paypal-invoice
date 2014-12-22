@@ -30,17 +30,20 @@ var currencyProperties = {
     USD: {
         symbol: '$',
         decimals: 2,
-        round: BigNum.ROUND_HALF_UP
+        round: BigNum.ROUND_HALF_UP,
+        iso4217: 840
     },
     GBP: {
         symbol: '£',
         decimals: 2,
-        round: BigNum.ROUND_HALF_UP
+        round: BigNum.ROUND_HALF_UP,
+        iso4217: 826
     },
     AUD: {
         symbol: '$',
         decimals: 2,
-        round: BigNum.ROUND_HALF_UP
+        round: BigNum.ROUND_HALF_UP,
+        iso4217: 36
     }
 };
 
@@ -55,6 +58,10 @@ module.exports = {
     Number: BigNum,
     newNumber: function (v) {
         return new BigNum(v);
+    },
+    toCents: function (currency, amount) {
+        var decimals = currencyProperties[currency].decimals;
+        return new BigNum(10).pow(decimals).times(amount);
     },
     properties: currencyProperties
 };
@@ -303,7 +310,10 @@ var InvoiceTotals = function (invoice) {
 
 InvoiceTotals.prototype = {
     _round: function (amt) {
-      return currency.round(this.invoice.currencyCode, amt);
+        return currency.round(this.invoice.currencyCode, amt);
+    },
+    toCents: function (amt) {
+        return currency.toCents(this.invoice.currencyCode, amt);
     },
     generateRoundedTaxDetailsFromTaxes: function (taxes) {
         var roundedTaxDetails = {};

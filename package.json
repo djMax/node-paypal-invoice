@@ -1,6 +1,6 @@
 {
     "name": "paypal-invoice",
-    "version": "0.1.4",
+    "version": "0.1.6",
     "description": "PayPal Invoicing for Node.js",
     "main": "index.js",
     "scripts": {
