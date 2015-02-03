@@ -1,7 +1,7 @@
 {
   "name": "paypal-invoice",
   "main": "dist/paypal-invoice.js",
-  "version": "0.1.0",
+  "version": "0.1.6",
   "homepage": "https://github.com/djMax/node-paypal-invoice",
   "authors": [
     "Max Metral <ma@x.com>"
